@@ -1,0 +1,50 @@
+<!-- <div *ngFor="let cartProduct of productList">
+  <h5>{{ cartProduct.title }}</h5>
+  <p>{{ cartProduct.description }}</p>
+  <strong
+    ><p>{{ cartProduct.price }}</p></strong
+  >
+  <button (click)="deleteFromCart(cartProduct)">Delete</button>
+</div>
+<a [routerLink]="['/checkout']"><button>Checkout products</button></a>
+
+<a [routerLink]="['']"><button>Return to home</button></a> -->
+
+<div class="cart-container" *ngIf="productList.length > 0">
+  <h2>Your Shopping Cart</h2>
+
+  <div *ngFor="let cartProduct of productList" class="cart-item">
+    <img
+      [src]="cartProduct.image"
+      alt="{{ cartProduct.title }}"
+      class="cart-item-img"
+    />
+
+    <div class="cart-item-details">
+      <h5>{{ cartProduct.title }}</h5>
+      <p class="cart-item-description">{{ cartProduct.description }}</p>
+      <strong
+        ><p>{{ cartProduct.price }}</p></strong
+      >
+      <button class="remove-btn" (click)="deleteFromCart(cartProduct)">
+        Remove
+      </button>
+    </div>
+  </div>
+
+  <!-- Mostrar monto total -->
+  <div class="cart-summary">
+    <h3>Total: {{ totalAmount }} Units</h3>
+    <a [routerLink]="['/checkout']"
+      ><button class="checkout-btn">Proceed to Checkout</button></a
+    >
+  </div>
+</div>
+
+<!-- Mensaje cuando no haya productos en el carrito -->
+<div *ngIf="productList.length === 0" class="empty-cart">
+  <h3>Your cart is empty</h3>
+  <a [routerLink]="['/']"
+    ><button class="return-btn">Continue Shopping</button></a
+  >
+</div>

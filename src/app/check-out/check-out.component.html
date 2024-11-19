@@ -1,0 +1,52 @@
+<div class="checkout-container">
+  <h2>Checkout</h2>
+
+  <div *ngIf="cartItems.length > 0; else emptyCart">
+    <div *ngFor="let item of cartItems" class="checkout-item">
+      <img [src]="item.image" alt="{{ item.title }}" class="item-img" />
+
+      <div class="item-details">
+        <h5>{{ item.title }}</h5>
+        <p class="item-description">{{ item.description }}</p>
+        <strong
+          ><p>{{ item.price | currency }}</p></strong
+        >
+      </div>
+
+      <div class="item-quantity">
+        <button (click)="decreaseQuantity(item)">-</button>
+        <input
+          type="number"
+          [(ngModel)]="item.quantity"
+          [value]="item.quantity"
+        />
+        <button (click)="increaseQuantity(item)">+</button>
+      </div>
+
+      <p class="item-subtotal">
+        Subtotal: {{ item.price * item.quantity | currency }}
+      </p>
+    </div>
+
+    <div class="checkout-summary">
+      <h3>Order Summary</h3>
+      <p>Total Items: {{ getTotalItems() }}</p>
+      <h4>Total: {{ getTotalPrice() | currency }}</h4>
+      <button class="confirm-btn" (click)="confirmOrder()">
+        Confirm Purchase
+      </button>
+      <a [routerLink]="['/cart']"
+        ><button class="back-btn">Back to Cart</button></a
+      >
+    </div>
+  </div>
+
+  <ng-template #emptyCart>
+    <div class="empty-checkout">
+      <h3>Your cart is empty!</h3>
+      <a [routerLink]="['/']"
+        ><button class="continue-btn">Continue Shopping</button></a
+      >
+    </div>
+  </ng-template>
+</div>

@@ -1,0 +1,48 @@
+<a [routerLink]="['/cart']" class="btn btn-cart">
+  <button>🛒 View Cart</button>
+</a>
+
+<div class="products-grid">
+  <div *ngFor="let product of productList" class="product-card">
+    <img
+      [src]="product.image"
+      alt="{{ product.title }}"
+      class="product-image"
+    />
+    <div class="product-details">
+      <h5 class="product-title">{{ product.title }}</h5>
+      <p class="product-description">{{ product.description }}</p>
+      <strong class="product-price">$ {{ product.price }}</strong>
+      <div class="product-rating">
+        ⭐ {{ product.rating.rate }} ({{ product.rating.count }} reviews)
+      </div>
+    </div>
+    <button (click)="addToCart(product)" class="btn btn-add-to-cart">
+      Add to cart
+    </button>
+  </div>
+</div>
+
+<div class="search-container">
+  <input
+    type="text"
+    name="productValue"
+    [(ngModel)]="productValue"
+    class="search-input"
+    placeholder="Search for a product..."
+  />
+  <button (click)="searchProduct()" class="btn btn-search">Search</button>
+</div>
+
+<div *ngIf="foundProduct" class="product-found">
+  <img
+    [src]="foundProduct.image"
+    alt="{{ foundProduct.title }}"
+    class="found-product-image"
+  />
+  <div class="found-product-details">
+    <h5 class="found-product-title">{{ foundProduct.title }}</h5>
+    <p class="found-product-description">{{ foundProduct.description }}</p>
+    <strong class="found-product-price">$ {{ foundProduct.price }}</strong>
+  </div>
+</div>

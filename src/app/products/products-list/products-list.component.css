@@ -1,0 +1,175 @@
+/* Global Styles */
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f3f4f6; /* Fondo gris claro */
+  margin: 0;
+  padding: 0;
+  color: #333; /* Texto principal en gris oscuro */
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Cart Button */
+.btn-cart {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+
+.btn-cart button {
+  background-color: #1a202c; /* Azul oscuro */
+  color: #fff; /* Blanco para contraste */
+}
+
+.btn-cart button:hover {
+  background-color: #2d3748; /* Azul más claro */
+}
+
+/* Product Grid */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.product-image {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  background-color: #f4f4f4; /* Fondo para imágenes con espacios vacíos */
+}
+
+.product-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0;
+  color: #1a202c; /* Azul oscuro */
+}
+
+.product-description {
+  font-size: 14px;
+  color: #4a5568; /* Gris intermedio */
+  margin-bottom: 10px;
+}
+
+.product-price {
+  font-size: 16px;
+  font-weight: bold;
+  color: #d69e2e; /* Dorado */
+  margin-bottom: 10px;
+}
+
+.product-rating {
+  font-size: 14px;
+  color: #718096; /* Gris más claro */
+  margin-bottom: 10px;
+}
+
+.btn-add-to-cart {
+  background-color: #1a202c; /* Azul oscuro */
+  color: white;
+}
+
+.btn-add-to-cart:hover {
+  background-color: #2d3748; /* Azul más claro */
+}
+
+/* Search Container */
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.search-input {
+  width: 300px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #cbd5e0; /* Gris claro */
+  margin-right: 10px;
+  font-size: 14px;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #1a202c; /* Azul oscuro */
+}
+
+.btn-search {
+  background-color: #d69e2e; /* Dorado */
+  color: white;
+}
+
+.btn-search:hover {
+  background-color: #b7791f; /* Dorado más oscuro */
+}
+
+/* Found Product */
+.product-found {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  max-width: 600px;
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.found-product-image {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-right: 20px;
+}
+
+.found-product-details {
+  text-align: left;
+}
+
+.found-product-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #1a202c; /* Azul oscuro */
+}
+
+.found-product-description {
+  font-size: 14px;
+  color: #4a5568; /* Gris intermedio */
+}
+
+.found-product-price {
+  font-size: 16px;
+  font-weight: bold;
+  color: #d69e2e; /* Dorado */
+}
